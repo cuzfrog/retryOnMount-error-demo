@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export PATH=$NODE20_HOME/bin:$PATH
+echo Node:$(node -v)
