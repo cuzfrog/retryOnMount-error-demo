@@ -1,6 +1,7 @@
 import './App.css'
 import { useQuery } from '@tanstack/react-query';
 import { Page } from './Page';
+import { useEffect, useState } from 'react';
 
 const queryFn = () => {
   console.log("404!!!");
@@ -14,6 +15,12 @@ export function App() {
     retry: false,
     retryOnMount: true,
   });
+
+  const [cnt, setCnt] = useState(0);
+  useEffect(() => {
+    setCnt(n => n + 1);
+    console.log(cnt);
+  }, [isLoading]);
 
   if (isLoading) {
     return "Loading...";
